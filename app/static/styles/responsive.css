@@ -14,3 +14,22 @@
         font-size: 24px;
     }
 }
+
+@media (max-width: 1000px) {
+    nav{
+    }
+    .navbar-brand{
+        font-size: 30px;
+        margin-left: 50px;
+    }
+
+    .navbar-toggler{
+        width: 100px;
+        height: 50px;
+        margin-right: 50px;
+    }
+    .navbar-nav{
+        margin-left: 50px;
+        font-size: 25px;
+    }
+}

@@ -10,6 +10,10 @@ body {
     margin: 0px;
 }
 
+hr{
+    border: 2px solid  #EC9D9D;
+    background-color: #EC9D9D;
+}
 .nav-bar {
     width: 100%;
     display: inline-block;
@@ -270,8 +274,9 @@ body {
 
 .hr_education{
     margin: auto;
-    width: 20%;
-    border-top: 5px solid red;
+    width: 300px;
+    border: 2px solid #EC9D9D;
+    background-color: #EC9D9D;
 }
 
 .education_margin{
