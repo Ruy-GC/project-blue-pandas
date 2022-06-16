@@ -6,17 +6,18 @@
     <script type="text/javascript">
         function initMap() {
             // generates a new map and marker for each object 
-            {% for trip in trips%}
+            
             // Generates map on the coordinates fetched from the json
-            const {{trip}} = new google.maps.Map(document.getElementById("{{trip}}"), {
+            const map = new google.maps.Map(document.getElementById("map"), {
                 zoom: 4,
-                center: { lat: {{trips[trip]['lat']}}, lng:  {{trips[trip]['long']}} },
+                center: { lat: {{trips['trip_0']['lat']}}, lng:  {{trips['trip_0']['long']}} },
             });
 
+            {% for trip in trips%}
             // Marker positioned at the selected location
             const {{trips[trip]['marker']}} = new google.maps.Marker({
                 position: { lat: {{trips[trip]['lat']}}, lng:  {{trips[trip]['long']}} },
-                map: {{trip}}
+                map: map
             });
             {% endfor %}
         }
@@ -26,19 +27,26 @@
 {% endblock%}
 
 {% block content %}
-<div class = "container text-center">
-    <h1 class = "about-title">{{title}}'s Favorite places</h1>
-    <hr/>
-
+    <div class = "container text-center">
+        <h1 class = "about-title">{{title}}'s Favorite places</h1>
+        <hr/>
+    </div>
+    <div class = "container text-left box">
+        <div class = "maps-info column">
         <!-- displays a new map and marker for each location -->
         {% for trip in trips%}
-            <div class = "container map-container">
+            <div class = "map-container">
                 <h2 class = "trips-h2">{{trips[trip]['name']}}</h2>
                 <p class = "trips-txt">{{trips[trip]['description']}}</p>
-                <div class = "map" id="{{trip}}"></div>
+                <center>
+                <button  class = "btn-user"> View on Map</button>
+                </center>
             </div>
         {% endfor %}
-    
+        </div>
+
+        <div class = "map column2" id="map"></div>
+
 </div>
    
 {% endblock %}
