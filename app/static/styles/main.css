@@ -122,7 +122,7 @@ hr{
 
 .member-card{
     text-align: center;
-    width: 300px;
+    width: 320px;
     margin: 10%;
     margin-top: 5px;
     margin-bottom: 10px;
@@ -289,6 +289,20 @@ footer {
     position:fixed;
     bottom:0;
     width:100%;
+    height: 65px;
     background-color: rgb(47, 47, 47);
     color: white;
+}
+
+.hobbies-search{
+    border-radius: 10px 0 0 10px;
+    font-size: 24px;
+    margin-right: 0px;
+    width: 80%;
+}
+
+.hobbies-search-button{
+    border-radius: 0 10px 10px 0;
+    font-size: 24px;
+    margin-left: 0px;
 }

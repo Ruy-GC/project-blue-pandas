@@ -1,17 +1,46 @@
 {% extends "base.jinja" %}
 
 {% block title %} Hobbies {% endblock %}
+{% block scripts %} 
+    <script type="text/javascript" >
+    function search(hobbies_obj){
+        var text = document.getElementById("searchHobbies").value;
+        var names = [];
+        var indexes = [];
+        const filtered = {};
+
+        for(var i = 0; i < Object.keys(hobbies_obj).length; i++){
+            indexes.push(i);
+            names.push(hobbies_obj[i]);
+        }
+        const result = names.filter(hobbie => hobbie.includes(text));
+
+        for(var i = 0; i < names.length; i++){
+            for(var j = 0; j < result.length; j++){
+                if(names[i] == result[j]){
+                    filtered[i] = result[j];
+                }
+            }
+        }
+        console.log(filtered);
+    }
+    </script>
+{% endblock%}
 
 {% block content %}
 
 <div class = "container">
     <h1 class = "about-title">{{title}}'s Hobbies</h1>
     <hr/>
+    <div style = "margin:20px;">
+        <input id="searchHobbies" type = "text" placeholder = "Filter" class = "hobbies-search"/>
+        <button class = "hobbies-search-button" onclick="search({{hobbies_name}})"><i class="fa fa-search"></i></button>
+    </div>
     <center>
         <!-- defines row layout -->
         <div class = "row">
             <!-- creates a card for every object found -->
-            {% for a in pics%}
+            {% for a in pics %}
                 <!-- defines columns-->
                 <div class = " col-sm-12 col-lg-4"> 
                     <div class = "card hobbies_shadowing margins">
