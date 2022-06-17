@@ -6,13 +6,25 @@
     <script type="text/javascript">
         function initMap() {
             // generates a new map and marker for each object 
-            
             // Generates map on the coordinates fetched from the json
             const map = new google.maps.Map(document.getElementById("map"), {
                 zoom: 4,
                 center: { lat: {{trips['trip_0']['lat']}}, lng:  {{trips['trip_0']['long']}} },
             });
 
+            setmarkers(map);
+        }
+
+        function changeFocus(lat,long) {
+            const map = new google.maps.Map(document.getElementById("map"), {
+                zoom: 10,
+                center: { lat: lat, lng:  long },
+            });
+
+            setmarkers(map);
+        }
+
+        function setmarkers(map){
             {% for trip in trips%}
             // Marker positioned at the selected location
             const {{trips[trip]['marker']}} = new google.maps.Marker({
@@ -22,9 +34,7 @@
             {% endfor %}
         }
     </script>
-
-
-{% endblock%}
+{% endblock %}
 
 {% block content %}
     <div class = "container text-center">
@@ -39,7 +49,7 @@
                 <h2 class = "trips-h2">{{trips[trip]['name']}}</h2>
                 <p class = "trips-txt">{{trips[trip]['description']}}</p>
                 <center>
-                <button  class = "btn-user"> View on Map</button>
+                <button  class = "btn-user" onclick = "changeFocus({{trips[trip]['lat']}},{{trips[trip]['long']}})"> View on Map</button>
                 </center>
             </div>
         {% endfor %}

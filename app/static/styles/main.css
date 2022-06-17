@@ -2,6 +2,20 @@ p, h1, h2, h3, h4, h5, h6, button {
     font-family: "Poppins";
 }
 
+::-webkit-scrollbar{
+    width: 10px;
+}
+
+::-webkit-scrollbar-track{
+    background-color: #e4e4e4;
+    border-radius: 100px;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: #fd6767;
+    border-radius: 100px;
+}
+
 body {
     background-color: #ffffff;
     background-size: cover;
@@ -229,12 +243,12 @@ hr{
 .box{
     display: flex;
     justify-content: center;
-    margin-top: 70px;
+    margin-top: 50px;
 }
 
 .map{
     width: 60%;
-    height: auto;
+    height: 600px;
     border-radius: 25px;
     display: inline-block;
     margin-left: 10px;
@@ -253,6 +267,10 @@ hr{
     display: inline-block;
     width: 40%;
     margin-right: 10px;
+    height: 600px;
+    overflow-y: scroll;
+    padding-right: 10px;
+
 }
 
 .trips-txt{
