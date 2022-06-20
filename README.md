@@ -43,8 +43,14 @@ We were able to build an portfolio that we're proud of, some of the most importa
 ## Installing and running
 ### Instalation
 ``` bash
+#windows
 python -m venv python3-virtualenv
 python3-virtualenv/Scripts/activate 
+pip install -r requirements.txt
+
+#linux
+python -m venv python3-virtualenv
+source python3-virtualenv/bin/activate 
 pip install -r requirements.txt
 ```
 
