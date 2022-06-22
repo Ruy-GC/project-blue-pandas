@@ -26,11 +26,11 @@
 
         function setmarkers(map){
             {% for trip in trips%}
-            // Marker positioned at the selected location
-            const {{trips[trip]['marker']}} = new google.maps.Marker({
-                position: { lat: {{trips[trip]['lat']}}, lng:  {{trips[trip]['long']}} },
-                map: map
-            });
+                // Marker positioned at the selected location
+                const {{trips[trip]['marker']}} = new google.maps.Marker({
+                    position: { lat: {{trips[trip]['lat']}}, lng:  {{trips[trip]['long']}} },
+                    map: map
+                });
             {% endfor %}
         }
     </script>
@@ -43,20 +43,18 @@
     </div>
     <div class = "container text-left box">
         <div class = "maps-info column">
-        <!-- displays a new map and marker for each location -->
-        {% for trip in trips%}
-            <div class = "map-container">
-                <h2 class = "trips-h2">{{trips[trip]['name']}}</h2>
-                <p class = "trips-txt">{{trips[trip]['description']}}</p>
-                <center>
-                <button  class = "btn-user" onclick = "changeFocus({{trips[trip]['lat']}},{{trips[trip]['long']}})"> View on Map</button>
-                </center>
-            </div>
-        {% endfor %}
+            <!-- displays a new map and marker for each location -->
+            {% for trip in trips %}
+                <div class = "map-container">
+                    <h2 class = "trips-h2">{{trips[trip]['name']}} </h2>
+                    <p class = "trips-txt">{{trips[trip]['description']}}</p>
+                    <center>
+                        <button  class = "btn-user" onclick = "changeFocus({{trips[trip]['lat']}},{{trips[trip]['long']}})"> View on Map</button>
+                    </center>
+                </div>
+            {% endfor %}
         </div>
-
         <div class = "map column2" id="map"></div>
-
-</div>
+    </div>
    
 {% endblock %}
