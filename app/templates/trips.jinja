@@ -25,7 +25,7 @@
         }
 
         function setmarkers(map){
-            {% for trip in trips%}
+            {% for trip in trips %}
                 // Marker positioned at the selected location
                 const {{trips[trip]['marker']}} = new google.maps.Marker({
                     position: { lat: {{trips[trip]['lat']}}, lng:  {{trips[trip]['long']}} },
@@ -42,7 +42,7 @@
         <hr/>
     </div>
     <div class = "container text-left box">
-        <div class = "maps-info column">
+        <div class = "maps-info">
             <!-- displays a new map and marker for each location -->
             {% for trip in trips %}
                 <div class = "map-container">
@@ -54,7 +54,7 @@
                 </div>
             {% endfor %}
         </div>
-        <div class = "map column2" id="map"></div>
+        <div class = "map" id="map"></div>
     </div>
    
 {% endblock %}
