@@ -35,17 +35,16 @@
             "2": "Gaming", 
             "3": "Working out", 
             "4": "Taekwondo"
-         }, 
+        }, 
 
-         "hobbies_notes":{
+        "hobbies_notes":{
             "0": "Twice a week, trying to pick up my old habit ",
             "1": "Love to read/watch action, comedy and romance stories",
             "2": "Been enjoying it since I was a kid, almost any kind", 
             "3": "4 times a week, always trying to improve",
-            "4": "Been training since I was a kid and I'm currently first degree black belt"
-
-         },
-
+            "4": "Currently first degree black belt."
+        },
+       
          "trips":{
             "trip_0": {
                 "name": "Toronto, Canada",

@@ -2,29 +2,7 @@
 
 {% block title %} Hobbies {% endblock %}
 {% block scripts %} 
-    <script type="text/javascript" >
-    function search(hobbies_obj){
-        var text = document.getElementById("searchHobbies").value;
-        var names = [];
-        var indexes = [];
-        const filtered = {};
-
-        for(var i = 0; i < Object.keys(hobbies_obj).length; i++){
-            indexes.push(i);
-            names.push(hobbies_obj[i]);
-        }
-        const result = names.filter(hobbie => hobbie.includes(text));
-
-        for(var i = 0; i < names.length; i++){
-            for(var j = 0; j < result.length; j++){
-                if(names[i] == result[j]){
-                    filtered[i] = result[j];
-                }
-            }
-        }
-        console.log(filtered);
-    }
-    </script>
+    <script type="text/javascript" src = "../static/scripts/search_hobbies.js"></script>
 {% endblock%}
 
 {% block content %}
@@ -34,11 +12,14 @@
     <hr/>
     <div style = "margin:20px;">
         <input id="searchHobbies" type = "text" placeholder = "Filter" class = "hobbies-search"/>
-        <button class = "hobbies-search-button" onclick="search({{hobbies_name}})"><i class="fa fa-search"></i></button>
+        <button 
+            id = "search"
+            class = "hobbies-search-button" 
+            onclick="search({{hobbies_name}},{{pics}},{{hobbies_memos}} )"> <i class="fa fa-search"></i></button>
     </div>
     <center>
         <!-- defines row layout -->
-        <div class = "row">
+        <div class = "row" id ="hobbies-container">
             <!-- creates a card for every object found -->
             {% for a in pics %}
                 <!-- defines columns-->
@@ -47,11 +28,11 @@
                         <img src = "{{pics[a]}}" class = "hobbies-img">
                         <div class = "card-body ">
                             <h4 class = "card-title">{{hobbies_name[a]}}</h4>
-                        <p class = "card-text">{{hobbies_memos[a]}}</p></div>
+                            <p class = "card-text">{{hobbies_memos[a]}}</p>
+                        </div>
                     </div>
                 </div>
             {% endfor %}
-            </div>
         </div>
     </center>
 </div>
