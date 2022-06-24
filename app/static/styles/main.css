@@ -331,13 +331,68 @@ footer {
 
 .hobbies-search{
     border-radius: 10px 0 0 10px;
-    font-size: 24px;
     margin-right: 0px;
+
+    display: inline-block;
     width: 80%;
+    font-size: 1.2rem;
+    border: none;
+    background-color: #EFF0F7;
+    padding: 15px;
+    font-size: 18px;
+    outline: none;
 }
 
 .hobbies-search-button{
     border-radius: 0 10px 10px 0;
-    font-size: 24px;
-    margin-left: 0px;
+    font-size: 18px;
+    border: none;
+    padding: 15px;
+    background-color: #ee6c4d;
+
+}
+
+.form-input{
+    display: block;
+    width: 100%;
+    font-size: 1.2rem;
+    border: none;
+    border-radius: 8px;
+    background-color: #EFF0F7;
+    padding: 15px;
+    font-size: 18px;
+    outline: none;
+    margin-bottom: 10px;
+}
+
+.hori-timeline .events {
+    border-top: 3px solid #ee6c4d;
+}
+.hori-timeline .events .event-list {
+    display: block;
+    position: relative;
+    text-align: center;
+    padding-top: 70px;
+    margin-right: 0;
+}
+.hori-timeline .events .event-list:before {
+    content: "";
+    position: absolute;
+    height: 36px;
+    border-right: 2px dashed #dee2e6;
+    top: 0;
+}
+.hori-timeline .events .event-list .event-date {
+    position: absolute;
+    top: 38px;
+    left: 0;
+    right: 0;
+    width: fit-content;
+    margin: 0 auto;
+    border-radius: 4px;
+    padding: 2px 4px;
+}
+
+.bg-soft-primary {
+    background-color: rgba(64,144,203,.3)!important;
 }

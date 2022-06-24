@@ -1,0 +1,46 @@
+{% extends "base.jinja" %}
+
+{% block title %} Timeline {% endblock %}
+
+{% block scripts %} 
+
+    <script type="text/javascript" src = "../static/scripts/requests/timeline.js"></script>
+
+{% endblock %}
+
+{% block content %}
+    <div class = "container">
+        <h1 class = "about-title">Timeline</h1>
+        <hr/>
+    </div>
+    <div class = "container">
+        <h2>Add new post</h2>
+        <form id = "timeline-form">
+            <input class = "form-input" type = "text" name = "name" placeholder = "Name" required/>
+            <input class = "form-input" type = "email" name = "email" placeholder = "Email" required/>
+            <input class = "form-input" type = "text" name = "content" placeholder = "Content" required/>
+            <input type = "submit" class = "btn-user" value = "Submit">
+        </form>
+
+
+        <div id = "timeline">
+
+        </div>
+        
+    </div>
+
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-12">
+                    <div class="card-body">
+                        <div class="hori-timeline" dir="ltr">
+                            <ul class="list-inline events" id ="eventList">
+                            <!-- Rendered elements based on request-->
+                            </ul>
+                        </div>
+                    </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

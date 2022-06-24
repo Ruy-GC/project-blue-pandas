@@ -76,10 +76,18 @@ def hobbies(user):
 def places(user):
      return render_template("trips.jinja", 
           title = data[user]["name"],
-          user = user,trips = data[user]["trips"],
+          user = user,
+          trips = data[user]["trips"],
           url=os.getenv("URL"),
           API = os.getenv("API"))
 
+@app.route("/<user>/timeline")
+def timeline(user):
+     return render_template("timeline.jinja",
+          title = data[user]["name"], 
+          user = user,
+          url=os.getenv("URL"),
+     )
 if __name__ == "__init__":
      app.run(debug = True)
 
