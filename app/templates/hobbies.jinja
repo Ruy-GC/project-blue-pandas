@@ -11,14 +11,14 @@
     <div class = "page-title">
             <h1>{{title}}'s Hobbies<span>Activities for my free time</span></h1>
     </div>
-    <div style = "margin:20px;">
-        <input id="searchHobbies" type = "text" placeholder = "Filter" class = "hobbies-search"/>
-        <button 
-            id = "search"
-            class = "hobbies-search-button" 
-            onclick="search({{hobbies_name}},{{pics}},{{hobbies_memos}} )"> <i class="fa fa-search"></i></button>
-    </div>
     <center>
+        <div style = "margin:20px;">
+            <input id="searchHobbies" type = "text" placeholder = "Filter" class = "hobbies-search"/>
+            <button 
+                id = "search"
+                class = "hobbies-search-button" 
+                onclick="search({{hobbies_name}},{{pics}},{{hobbies_memos}} )"> <i class="fa fa-search"></i></button>
+        </div>
         <!-- defines row layout -->
         <div class = "row" id ="hobbies-container">
             <!-- creates a card for every object found -->
