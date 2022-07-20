@@ -28,10 +28,6 @@ body {
     margin: 0px;
 }
 
-hr{
-    border: 2px solid  #ee6c4d;
-    background-color: #ee6c4d;
-}
 .nav-bar {
     width: 100%;
     display: inline-block;
@@ -344,10 +340,6 @@ hr{
     float: left;
     width: 33.33%;
     padding: 10px;
-}
-
-.education_margin{
-    margin-top:20px;
 }
 
 .subtitle h1 {
