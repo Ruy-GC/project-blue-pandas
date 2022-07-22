@@ -34,7 +34,7 @@ jobs:
         run: ssh my-vps '~/redeploy-site.sh'
       
       - name: Print Container Status
-        run: ssh my-vps 'cd ${{ secrets.PROJECT_ROOT}} && pwd | docker-compose ps'
+        run: ssh my-vps 'cd ${{ secrets.PROJECT_ROOT}} && pwd | docker compose ps'
       
       - name: Deployment Failed
         if: steps.deploy.outcome == 'failure'
