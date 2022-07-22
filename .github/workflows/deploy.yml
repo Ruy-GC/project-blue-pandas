@@ -35,8 +35,8 @@ jobs:
       
       - name: Print Container Status
         run: |
-          cd project-blue-pandas
-          docker-compose ps
+          cd ~/project-blue-pandas
+          docker compose ps
       
       - name: Deployment Failed
         if: steps.deploy.outcome == 'failure'
