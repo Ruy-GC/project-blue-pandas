@@ -29,5 +29,20 @@ jobs:
           SSH_IP: ${{ secrets.SSH_IP}}
 
       - name: Deploy site
+        id: deploy
+        continue-on-error: true
         run: ssh my-vps '~/redeploy-site.sh'
+      
+      - name: Print Container Status
+        run: |
+          cd project-blue-pandas
+          docker-compose ps
+      
+      - name: Deployment Failed
+        if: steps.deploy.outcome == 'failure'
+        run: curl -s -X POST "${{ secrets.DISCORD_WEBHOOK }}" -d "content=🚨 MLH Portfolio Deployment Failed"
+
+      - name: Deployment Successfull
+        if: steps.deploy.outcome == 'success'
+        run: curl -s -X POST "${{ secrets.DISCORD_WEBHOOK }}" -d "content=🚀 MLH Portfolio Deployment Successful"
 
