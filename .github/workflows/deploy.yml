@@ -42,17 +42,22 @@ jobs:
         if: steps.deploy.outcome == 'success'
         run: ssh my-vps 'cd ${{ secrets.PROJECT_ROOT}} && pwd | docker compose ps'
       
+  on-failure:
+    name: "Tests failed"
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'failure' }}
+    steps:
+      - run: echo 'The triggering test workflow failed'
+
+  discord:
+    name: "Send notification"
+    runs-on: ubuntu-latest
+    needs: [deploy]
+    steps:
       - name: Deployment Failed
-        if: steps.deploy.outcome == 'failure'
+        if: needs.deploy.result == 'failure'
         run: curl -s -X POST "${{ secrets.DISCORD_WEBHOOK }}" -d "content=🚨 MLH Portfolio Deployment Failed"
 
       - name: Deployment Successfull
-        if: steps.deploy.outcome == 'success'
+        if: needs.deploy.result == 'success'
         run: curl -s -X POST "${{ secrets.DISCORD_WEBHOOK }}" -d "content=🚀 MLH Portfolio Deployment Successful"
-  
-  on-failure:
-      name: "Tests failed"
-      runs-on: ubuntu-latest
-      if: ${{ github.event.workflow_run.conclusion == 'failure' }}
-      steps:
-        - run: echo 'The triggering workflow failed'
