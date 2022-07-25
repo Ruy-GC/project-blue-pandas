@@ -51,6 +51,7 @@ jobs:
   discord:
     name: "Send notification"
     runs-on: ubuntu-latest
+    if: ${{ always() }}
     needs: [deploy]
     steps:
       - name: Deployment Failed
