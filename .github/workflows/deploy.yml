@@ -35,7 +35,6 @@ jobs:
 
       - name: Deploy site
         id: deploy
-        continue-on-error: true
         run: ssh my-vps '~/redeploy-site.sh'
       
       - name: Print Container Status
