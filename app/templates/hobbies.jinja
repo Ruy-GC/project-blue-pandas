@@ -1,4 +1,4 @@
-{% extends "base.jinja" %}
+{% extends "base.html" %}
 
 {% block title %} Hobbies {% endblock %}
 {% block scripts %} 
@@ -6,6 +6,7 @@
 {% endblock%}
 
 {% block content %}
+{% include "navbar.html" %}
 
 <div class = "container">
     <div class = "page-title">

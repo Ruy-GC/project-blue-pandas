@@ -38,21 +38,21 @@ mydb.connect()
 mydb.create_tables([TimelinePost])
 
 # Routing -----------------------------------------------------------
-@app.route('/')
-def index():
-     return render_template('index.jinja', 
-          title="MEET THE TEAM!",
-          user1 = data["ruy"],
-          user2 = data["michelle"], 
-          url=os.getenv("URL"))
+#@app.route('/')
+#def index():
+#     return render_template('index.jinja', 
+#          title="MEET THE TEAM!",
+#          user1 = data["ruy"],
+#          user2 = data["michelle"], 
+#          url=os.getenv("URL"))
 
 # Single about page, /<user> allows to get the user value and fectch it from our data.json
-@app.route('/<user>')
-def homepage(user):
-     return render_template('home.jinja',
-          title = data[user]["name"],
-          user_data = data[user],
-          user = user,
+@app.route('/')
+def homepage():
+     return render_template('home.html',
+          title = data["ruy"]["name"],
+          user_data = data["ruy"],
+          user = "ruy",
           url=os.getenv("URL"))
 
 # Education & experience page
