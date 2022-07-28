@@ -1,4 +1,4 @@
-{% extends "base.jinja" %}
+{% extends "base.html" %}
 {% block title %}Trips{% endblock %}
 
 {% block map %} 
@@ -37,6 +37,7 @@
 {% endblock %}
 
 {% block content %}
+{% include "navbar.html" %}
 
     <div class = "container text-center">
         <div class = "page-title">
