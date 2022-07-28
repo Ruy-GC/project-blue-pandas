@@ -52,47 +52,51 @@ def homepage():
      return render_template('home.html',
           title = data["ruy"]["name"],
           user_data = data["ruy"],
-          user = "ruy",
           url=os.getenv("URL"))
 
 # Education & experience page
-@app.route("/<user>/educationexperience")
-def education(user):
+@app.route("/ruy/educationexperience")
+def education():
      return render_template("education_experience.jinja",
-          title = data[user]["name"], 
-          majors = data[user]["major"], 
-          uni_name = data[user]["school"],
-          companies = data[user]["companies"], 
-          workexperiences = data[user]["work_experiences"],
-          user = user,url=os.getenv("URL"))
+          title = data["ruy"]["name"], 
+          majors = data["ruy"]["major"], 
+          uni_name = data["ruy"]["school"],
+          companies = data["ruy"]["companies"], 
+          workexperiences = data["ruy"]["work_experiences"],
+          url=os.getenv("URL"))
 
 # Hobbies page
-@app.route("/<user>/hobbies")
-def hobbies(user):
+@app.route("/ruy/hobbies")
+def hobbies():
      return render_template("hobbies.jinja", 
-          title = data[user]["name"], 
-          pics = data[user]["hobbies_pics"], 
-          hobbies_name = data[user]["hobbies_description"], 
-          hobbies_memos = data[user]["hobbies_notes"],
-          user = user,url=os.getenv("URL"))
+          title = data["ruy"]["name"], 
+          pics = data["ruy"]["hobbies_pics"], 
+          hobbies_name = data["ruy"]["hobbies_description"], 
+          hobbies_memos = data["ruy"]["hobbies_notes"],
+          url=os.getenv("URL"))
 
 # Places page
-@app.route("/<user>/places")
-def places(user):
+@app.route("/ruy/places")
+def places():
      return render_template("trips.jinja", 
-          title = data[user]["name"],
-          user = user,
-          trips = data[user]["trips"],
+          title = data["ruy"]["name"],
+          trips = data["ruy"]["trips"],
           url=os.getenv("URL"),
           API = os.getenv("API"))
 
-@app.route("/<user>/timeline")
-def timeline(user):
+@app.route("/ruy/timeline")
+def timeline():
      return render_template("timeline.jinja",
-          title = data[user]["name"], 
-          user = user,
+          title = data["ruy"]["name"], 
           url=os.getenv("URL"),
      )
+
+@app.errorhandler(404)
+def page_not_found(e):
+     return render_template('404.html',
+          user_data = data["ruy"],
+          url=os.getenv("URL"))
+
 if __name__ == "__init__":
      app.run(debug = True)
 

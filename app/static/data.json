@@ -1,7 +1,7 @@
 {
     "ruy" : {
         "name":"Ruy Guzm&aacuten",
-        "img": "../static/img/Ruy.jpg",
+        "img": "../static/img/ruy.png",
         "about": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla urna nisl, accumsan non aliquam et, venenatis tincidunt ante. Integer in tincidunt ante. Praesent rhoncus urna id aliquam posuere. Integer porttitor congue tempor. Duis congue blandit enim, ut eleifend risus. Morbi hendrerit lorem in sapien condimentum, eget ullamcorper ex gravida. Nulla eget imperdiet nisl.",
         "email": "ruy.guzman2002@gmail.com",
         "phone": "3311698146",
@@ -66,78 +66,6 @@
                 "lat": 21.17429,
                 "long": -86.84656,
                 "description": "Visited several times on summer vacations with my family"
-            }
-        }
-
-
-
-    },
-    "michelle" : {
-        "name":"Michelle Lam ",
-        "img": "../static/img/Michelle.jpg",
-        "about": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nulla urna nisl, accumsan non aliquam et, venenatis tincidunt ante. Integer in tincidunt ante. Praesent rhoncus urna id aliquam posuere. Integer porttitor congue tempor. Duis congue blandit enim, ut eleifend risus. Morbi hendrerit lorem in sapien condimentum, eget ullamcorper ex gravida. Nulla eget imperdiet nisl.",
-        "email": "michellelamhelps@gmail.com",
-        "phone": "917-xxx-xxxx",
-        "github": "https://github.com/michelellam",
-        "linkedin": "https://www.linkedin.com/in/michelle-lam-446663233/",
-        "major": "Computer Science",
-        "school": "Binghamton University",
-        "companies":{
-            "0": "CS 110 Final Project",
-            "1": "MLH Fellowship",
-            "2": "Tutor"
-        },
-
-        "work_experiences":{
-            "0": "Using the pygame library to build a basic platform game",
-            "1": "Part of the Production Engineer Track under the mentorship of Meta Engineers",
-            "2": "Voluteer to tutor elementary students on math"
-        },
-
-        "hobbies_pics": {
-            "0":"/static/img/badminton.jpg", 
-            "1": "/static/img/reading.jpg", 
-            "2": "/static/img/travel.jpg",
-            "3": "/static/img/tennis.jpg",
-            "4": "/static/img/sleeping.jpg"
-        },
-        "hobbies_description":{
-            "0": "Badminton",
-            "1": "Reading",
-            "2": "Traveling", 
-            "3": "Tennis", 
-            "4": "Sleeping"
-        },
-
-        "hobbies_notes":{
-            "0": "Not the best at it, but I like to play it whenever my parents are free", 
-            "1": "Loved reading ever since I was young, it always helps me to calm down", 
-            "2": "Always excited to visit new places whenever I have the chance to", 
-            "3": "Played during my middle and high school years",
-            "4": "This should be a given."
-        },
-
-        "trips":{
-            "trip_0": {
-                "name": "Paris, France",
-                "marker": "paris_marker",
-                "lat": 	48.85341,
-                "long": 2.3488,
-                "description": "My french class was offering an exchange program to France! I was accustomed to their culture, improving my french, and was able to see Mona Lisa live! "
-            },
-            "trip_1": {
-                "name": "Boba Guys",
-                "marker": "boba_marker",
-                "lat": 40.72622280917157,
-                "long": -73.99874345997777,
-                "description": "The location of my favorite boba store. Totally recommend getting the strawberry matcha latte."
-            },
-            "trip_3": {
-                "name": "Binghamton University",
-                "marker": "binghamton_marker",
-                "lat": 42.089341376833616,
-                "long": -75.9691491213266,
-                "description": "The location of my university !"
             }
         }
     }
